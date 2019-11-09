@@ -1,0 +1,36 @@
+.counter {
+  background-color: var(--surface);
+  border: 1px solid var(--secondary);
+  border-radius: 2px;
+  box-shadow: var(--z-depth-1);
+  color: var(--on-surface);
+  display: inline-flex;
+  flex-direction: column;
+  font-family: LatoRegular, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+  margin: 0.667rem 0 1rem;
+}
+
+.counter__content {
+  padding: 1rem 1.5rem;
+}
+
+.counter__title {
+  font-family: LatoLight, sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  margin: 0 0 0.667rem;
+}
+
+.counter__paragraph {
+  margin: 0;
+}
+
+.counter__action {
+  background-color: inherit;
+  border-top: 1px solid var(--secondary-light);
+  display: flex;
+  padding: 1rem 1.5rem;
+}

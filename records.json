@@ -1,0 +1,267 @@
+{
+  "html-webpack-plugin for \"index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/html-webpack-plugin/lib/loader.js!src/index.html": 0,
+          "node_modules/lodash/lodash.js": 1,
+          "node_modules/webpack/buildin/module.js": 2
+        },
+        "usedIds": {
+          "0": 0,
+          "1": 1,
+          "2": 2
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "node_modules/babel-loader/lib/index.js!src/index.js": 0,
+      "node_modules/mini-css-extract-plugin/dist/loader.js!node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js!src/styles/index.css": 1,
+      "node_modules/url-loader/dist/cjs.js??ref--8!src/images/photo-160w.jpg": 2,
+      "node_modules/core-js-pure/internals/fails.js": 1,
+      "node_modules/core-js-pure/internals/global.js": 2,
+      "node_modules/core-js-pure/internals/descriptors.js": 3,
+      "node_modules/core-js-pure/internals/is-object.js": 4,
+      "node_modules/core-js-pure/internals/path.js": 5,
+      "node_modules/core-js-pure/internals/to-indexed-object.js": 6,
+      "node_modules/core-js-pure/internals/has.js": 7,
+      "node_modules/core-js-pure/internals/object-define-property.js": 8,
+      "node_modules/core-js-pure/internals/export.js": 9,
+      "node_modules/core-js-pure/internals/create-property-descriptor.js": 10,
+      "node_modules/core-js-pure/internals/to-primitive.js": 11,
+      "node_modules/lit-html/lit-html.js 98604d78041715fec1dfaef51fe0a8ad": 12,
+      "node_modules/core-js-pure/internals/classof-raw.js": 13,
+      "node_modules/core-js-pure/internals/ie8-dom-define.js": 14,
+      "node_modules/core-js-pure/internals/create-non-enumerable-property.js": 15,
+      "node_modules/core-js-pure/internals/an-object.js": 16,
+      "node_modules/core-js-pure/internals/to-length.js": 17,
+      "node_modules/core-js-pure/internals/to-integer.js": 18,
+      "node_modules/core-js-pure/internals/to-absolute-index.js": 19,
+      "node_modules/core-js-pure/internals/hidden-keys.js": 20,
+      "node_modules/core-js-pure/internals/freezing.js": 21,
+      "node_modules/core-js-pure/internals/uid.js": 22,
+      "node_modules/core-js-pure/internals/well-known-symbol.js": 23,
+      "node_modules/@babel/runtime-corejs3/helpers/taggedTemplateLiteral.js": 24,
+      "node_modules/url-loader/dist/cjs.js??ref--8!src/img/card-top.jpg": 25,
+      "node_modules/@babel/runtime-corejs3/core-js/object/define-properties.js": 26,
+      "node_modules/core-js-pure/features/object/define-properties.js": 27,
+      "node_modules/core-js-pure/es/object/define-properties.js": 28,
+      "node_modules/core-js-pure/modules/es.object.define-properties.js": 29,
+      "node_modules/core-js-pure/internals/object-get-own-property-descriptor.js": 30,
+      "node_modules/core-js-pure/internals/object-property-is-enumerable.js": 31,
+      "node_modules/core-js-pure/internals/indexed-object.js": 32,
+      "node_modules/core-js-pure/internals/require-object-coercible.js": 33,
+      "node_modules/core-js-pure/internals/document-create-element.js": 34,
+      "node_modules/core-js-pure/internals/is-forced.js": 35,
+      "node_modules/core-js-pure/internals/bind-context.js": 36,
+      "node_modules/core-js-pure/internals/a-function.js": 37,
+      "node_modules/core-js-pure/internals/object-define-properties.js": 38,
+      "node_modules/core-js-pure/internals/object-keys.js": 39,
+      "node_modules/core-js-pure/internals/object-keys-internal.js": 40,
+      "node_modules/core-js-pure/internals/array-includes.js": 41,
+      "node_modules/core-js-pure/internals/enum-bug-keys.js": 42,
+      "node_modules/@babel/runtime-corejs3/core-js/object/freeze.js": 43,
+      "node_modules/core-js-pure/features/object/freeze.js": 44,
+      "node_modules/core-js-pure/es/object/freeze.js": 45,
+      "node_modules/core-js-pure/modules/es.object.freeze.js": 46,
+      "node_modules/core-js-pure/internals/internal-metadata.js": 47,
+      "node_modules/@babel/runtime-corejs3/core-js/instance/slice.js": 48,
+      "node_modules/core-js-pure/features/instance/slice.js": 49,
+      "node_modules/core-js-pure/es/instance/slice.js": 50,
+      "node_modules/core-js-pure/es/array/virtual/slice.js": 51,
+      "node_modules/core-js-pure/modules/es.array.slice.js": 52,
+      "node_modules/core-js-pure/internals/is-array.js": 53,
+      "node_modules/core-js-pure/internals/create-property.js": 54,
+      "node_modules/core-js-pure/internals/array-method-has-species-support.js": 55,
+      "node_modules/core-js-pure/internals/shared.js": 56,
+      "node_modules/core-js-pure/internals/is-pure.js": 57,
+      "node_modules/core-js-pure/internals/shared-store.js": 58,
+      "node_modules/core-js-pure/internals/set-global.js": 59,
+      "node_modules/core-js-pure/internals/native-symbol.js": 60,
+      "node_modules/core-js-pure/internals/v8-version.js": 61,
+      "node_modules/core-js-pure/internals/user-agent.js": 62,
+      "node_modules/core-js-pure/internals/get-built-in.js": 63,
+      "node_modules/core-js-pure/internals/entry-virtual.js": 64,
+      "node_modules/mini-css-extract-plugin/dist/loader.js!node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js!src/css/index.css": 65,
+      "node_modules/babel-loader/lib/index.js!src/index.js b78a8bde88a7a8c606e9f4f76e86e61b": 0
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16,
+      "17": 17,
+      "18": 18,
+      "19": 19,
+      "20": 20,
+      "21": 21,
+      "22": 22,
+      "23": 23,
+      "24": 24,
+      "25": 25,
+      "26": 26,
+      "27": 27,
+      "28": 28,
+      "29": 29,
+      "30": 30,
+      "31": 31,
+      "32": 32,
+      "33": 33,
+      "34": 34,
+      "35": 35,
+      "36": 36,
+      "37": 37,
+      "38": 38,
+      "39": 39,
+      "40": 40,
+      "41": 41,
+      "42": 42,
+      "43": 43,
+      "44": 44,
+      "45": 45,
+      "46": 46,
+      "47": 47,
+      "48": 48,
+      "49": 49,
+      "50": 50,
+      "51": 51,
+      "52": 52,
+      "53": 53,
+      "54": 54,
+      "55": 55,
+      "56": 56,
+      "57": 57,
+      "58": 58,
+      "59": 59,
+      "60": 60,
+      "61": 61,
+      "62": 62,
+      "63": 63,
+      "64": 64,
+      "65": 65
+    }
+  },
+  "chunks": {
+    "byName": {
+      "main": 0,
+      "manifest": 1,
+      "vendors~main": 2
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js!src/styles/index.css": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/dist/runtime/api.js": 0,
+          "node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js!src/styles/index.css": 1,
+          "node_modules/css-loader/dist/cjs.js!src/styles/variables.css": 2,
+          "node_modules/css-loader/dist/cjs.js!src/styles/globals.css": 3,
+          "node_modules/css-loader/dist/cjs.js!src/styles/webfonts.css": 4,
+          "node_modules/css-loader/dist/runtime/getUrl.js": 5,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Light.woff2": 6,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Light.woff": 7,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Light.eot": 8,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Light.ttf": 9,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Regular.woff2": 10,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Regular.woff": 11,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Regular.eot": 12,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Regular.ttf": 13
+        },
+        "usedIds": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7,
+          "8": 8,
+          "9": 9,
+          "10": 10,
+          "11": 11,
+          "12": 12,
+          "13": 13
+        }
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js!src/css/index.css": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js!src/css/index.css": 0,
+          "node_modules/css-loader/dist/runtime/api.js": 1,
+          "node_modules/css-loader/dist/runtime/getUrl.js": 2,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Light.woff2": 3,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Light.woff": 4,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Light.eot": 5,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Light.ttf": 6,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Regular.woff2": 7,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Regular.woff": 8,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Regular.eot": 9,
+          "node_modules/file-loader/dist/cjs.js??ref--4!src/fonts/LatoLatin-Regular.ttf": 10
+        },
+        "usedIds": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7,
+          "8": 8,
+          "9": 9,
+          "10": 10
+        }
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ]
+}

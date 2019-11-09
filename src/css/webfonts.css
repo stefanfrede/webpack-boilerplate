@@ -1,0 +1,17 @@
+/* LatoLatin-Light */
+@font-face {
+  font-family: 'LatoLight';
+  src: url('../fonts/LatoLatin-Light.woff2') format('woff2'),
+    url('../fonts/LatoLatin-Light.woff') format('woff'),
+    url('../fonts/LatoLatin-Light.eot') format('embedded-opentype'),
+    url('../fonts/LatoLatin-Light.ttf') format('truetype');
+}
+
+/* LatoLatin-Regular */
+@font-face {
+  font-family: 'LatoRegular';
+  src: url('../fonts/LatoLatin-Regular.woff2') format('woff2'),
+    url('../fonts/LatoLatin-Regular.woff') format('woff'),
+    url('../fonts/LatoLatin-Regular.eot') format('embedded-opentype'),
+    url('../fonts/LatoLatin-Regular.ttf') format('truetype');
+}
