@@ -45,6 +45,7 @@ exports.extractCSS = ({ include, exclude, use = [] }) => {
           exclude,
 
           use: [MiniCssExtractPlugin.loader].concat(use),
+          sideEffects: true,
         },
       ],
     },
@@ -168,6 +169,7 @@ exports.minifyCSS = ({ options }) => ({
 exports.minifyJavaScript = () => ({
   optimization: {
     minimizer: [new TerserJSPlugin({ sourceMap: true })],
+    usedExports: true,
   },
 });
 
