@@ -116,6 +116,7 @@ exports.loadJavaScript = ({ include, exclude } = {}) => ({
     rules: [
       {
         test: /\.js$/,
+        type: 'javascript/esm',
         include,
         exclude,
         use: {
