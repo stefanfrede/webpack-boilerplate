@@ -44,8 +44,7 @@
     "*.js": [
       "eslint --fix",
       "stylelint --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "sideEffects": false,
