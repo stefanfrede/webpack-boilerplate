@@ -17,7 +17,7 @@
         "byName": {},
         "bySource": {},
         "usedIds": [
-          0
+          1
         ]
       }
     }
@@ -92,7 +92,13 @@
       "node_modules/core-js-pure/internals/get-built-in.js": 63,
       "node_modules/core-js-pure/internals/entry-virtual.js": 64,
       "node_modules/mini-css-extract-plugin/dist/loader.js!node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js!src/css/index.css": 65,
-      "node_modules/babel-loader/lib/index.js!src/index.js b78a8bde88a7a8c606e9f4f76e86e61b": 0
+      "node_modules/babel-loader/lib/index.js!src/index.js b78a8bde88a7a8c606e9f4f76e86e61b": 0,
+      "node_modules/core-js-pure/internals/function-bind-context.js": 0,
+      "node_modules/core-js-pure/internals/use-symbol-as-uid.js": 25,
+      "node_modules/core-js-pure/internals/engine-v8-version.js": 36,
+      "node_modules/core-js-pure/internals/engine-user-agent.js": 61,
+      "node_modules/core-js-pure/internals/array-method-uses-to-length.js": 62,
+      "node_modules/babel-loader/lib/index.js!src/index.js d8dbc9f8a2a736d02014a336e359e213": 66
     },
     "usedIds": {
       "0": 0,
@@ -160,7 +166,8 @@
       "62": 62,
       "63": 63,
       "64": 64,
-      "65": 65
+      "65": 65,
+      "66": 66
     }
   },
   "chunks": {
