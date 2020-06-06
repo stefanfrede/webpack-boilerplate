@@ -61,7 +61,7 @@
     "test:e2e:dev": "start-server-and-test dev http://localhost:8080 cy:open",
     "build": "webpack --env production",
     "build:stats": "webpack --env production --json > stats.json",
-    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --host 0.0.0.0 --env development\"",
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
     "start:build": "serve --no-clipboard --listen 8080 dist",
     "deploy": "gh-pages -d dist",
     "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:stylelint",
