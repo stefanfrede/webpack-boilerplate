@@ -1,6 +1,5 @@
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const { GenerateSW } = require('workbox-webpack-plugin');
 const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -22,7 +21,6 @@ const commonConfig = merge([
     plugins: [
       new CaseSensitivePathsPlugin(),
       new FriendlyErrorsWebpackPlugin(),
-      new GenerateSW(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
         title: 'Webpack Boilerplate',
@@ -109,7 +107,7 @@ const developmentConfig = merge([
   parts.loadImages(),
 ]);
 
-module.exports = mode => {
+module.exports = (mode) => {
   const config = mode === 'production' ? productionConfig : developmentConfig;
 
   return merge([commonConfig, config, { mode }]);
