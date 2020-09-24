@@ -1,6 +1,7 @@
 const { mode } = require('webpack-nano/argv');
 
 const { MiniHtmlWebpackPlugin } = require('mini-html-webpack-plugin');
+const WebpackBar = require('webpackbar');
 
 module.exports = {
   mode,
@@ -10,5 +11,6 @@ module.exports = {
         title: 'Webpack demo',
       },
     }),
+    new WebpackBar(),
   ],
 };
