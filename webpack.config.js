@@ -11,6 +11,7 @@ const commonConfig = merge([
   },
 
   parts.page({ title: 'Webpack demo' }),
+  parts.loadCSS(),
 ]);
 
 const productionConfig = merge([]);
