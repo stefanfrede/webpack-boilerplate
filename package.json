@@ -64,6 +64,7 @@
     "stylelint-order": "^4.1.0",
     "webpack": "^4.44.2",
     "webpack-nano": "^1.0.0",
+    "webpack-plugin-serve": "^1.0.1",
     "webpackbar": "^4.0.0"
   },
   "dependencies": {}
