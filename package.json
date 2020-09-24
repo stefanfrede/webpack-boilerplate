@@ -59,7 +59,9 @@
     "stylelint": "^13.7.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended": "^3.0.0",
-    "stylelint-order": "^4.1.0"
+    "stylelint-order": "^4.1.0",
+    "webpack": "^4.44.2",
+    "webpack-nano": "^1.0.0"
   },
   "dependencies": {}
 }
