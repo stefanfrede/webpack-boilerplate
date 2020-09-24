@@ -1,7 +1,6 @@
 const { mode } = require('webpack-nano/argv');
-const { merge } = require('webpack-merge');
-
 const WebpackBar = require('webpackbar');
+const { merge } = require('webpack-merge');
 
 const parts = require('./webpack.parts');
 
@@ -11,10 +10,9 @@ const commonConfig = merge([
   },
 
   parts.page({ title: 'Webpack demo' }),
-  parts.loadCSS(),
 ]);
 
-const productionConfig = merge([]);
+const productionConfig = merge([parts.extractCSS()]);
 
 const developmentConfig = merge([
   {
@@ -22,6 +20,7 @@ const developmentConfig = merge([
   },
 
   parts.devServer(),
+  parts.extractCSS({ options: { hmr: true } }),
 ]);
 
 const getConfig = (mode) => {
