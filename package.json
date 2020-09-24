@@ -41,7 +41,8 @@
   },
   "sideEffects": false,
   "scripts": {
-    "test": "echo \"This template does not include a test runner by default.\" && exit 1"
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1",
+    "build": "wp --mode production"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
