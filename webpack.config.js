@@ -4,6 +4,12 @@ const { merge } = require('webpack-merge');
 
 const parts = require('./webpack.parts');
 
+const cssLoaders = [
+  parts.postcssPresetEnv(),
+  parts.tailwind(),
+  parts.postcssImport(),
+];
+
 const commonConfig = merge([
   {
     plugins: [new WebpackBar()],
@@ -12,7 +18,10 @@ const commonConfig = merge([
   parts.page({ title: 'Webpack demo' }),
 ]);
 
-const productionConfig = merge([parts.extractCSS()]);
+const productionConfig = merge([
+  parts.extractCSS({ loaders: cssLoaders }),
+  parts.eliminateUnusedCSS(),
+]);
 
 const developmentConfig = merge([
   {
@@ -20,7 +29,7 @@ const developmentConfig = merge([
   },
 
   parts.devServer(),
-  parts.extractCSS({ options: { hmr: true } }),
+  parts.extractCSS({ options: { hmr: true }, loaders: cssLoaders }),
 ]);
 
 const getConfig = (mode) => {
