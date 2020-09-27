@@ -95,6 +95,22 @@ exports.tailwind = () => ({
   },
 });
 
+exports.loadFonts = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
+        include,
+        exclude,
+        use: {
+          loader: 'url-loader',
+          options,
+        },
+      },
+    ],
+  },
+});
+
 exports.loadImages = ({ include, exclude, options } = {}) => ({
   module: {
     rules: [

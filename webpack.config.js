@@ -16,6 +16,13 @@ const commonConfig = merge([
   },
 
   parts.page({ title: 'Webpack demo' }),
+  parts.loadFonts({
+    options: {
+      limit: 50000,
+      mimetype: 'application/font-woff',
+      name: '[name].[ext]',
+    },
+  }),
 ]);
 
 const productionConfig = merge([
