@@ -1,7 +1,9 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const cssnano = require('cssnano');
 const GitRevisionPlugin = require('git-revision-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { MiniHtmlWebpackPlugin } = require('mini-html-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
@@ -84,6 +86,16 @@ exports.extractCSS = ({ options = {}, loaders = [] } = {}) => {
     ],
   };
 };
+
+exports.minifyCSS = ({ options }) => ({
+  plugins: [
+    new OptimizeCSSAssetsPlugin({
+      cssProcessor: cssnano,
+      cssProcessorOptions: options,
+      canPrint: false,
+    }),
+  ],
+});
 
 exports.postcssImport = () => ({
   loader: 'postcss-loader',

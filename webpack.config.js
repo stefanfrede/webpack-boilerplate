@@ -29,6 +29,11 @@ const commonConfig = merge([
 
 const productionConfig = merge([
   parts.minifyJavaScript(),
+  parts.minifyCSS({
+    options: {
+      preset: ['default'],
+    },
+  }),
   parts.extractCSS({ loaders: cssLoaders }),
   parts.eliminateUnusedCSS(),
   parts.loadImages({
