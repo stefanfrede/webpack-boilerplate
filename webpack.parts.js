@@ -32,7 +32,7 @@ exports.devServer = () => ({
   plugins: [
     new WebpackPluginServe({
       port: process.env.PORT || 8080,
-      static: './dist', // Expose if output.path changes
+      static: './dist',
       liveReload: true,
       waitForBuild: true,
     }),
@@ -52,8 +52,8 @@ exports.page = ({ title }) => ({
 exports.eliminateUnusedCSS = () => ({
   plugins: [
     new PurgeCSSPlugin({
-      whitelistPatterns: [], // Example: /^svg-/
-      paths: ALL_FILES, // Consider extracting as a parameter
+      whitelistPatterns: [],
+      paths: ALL_FILES,
       extractors: [
         {
           extractor: (content) =>
