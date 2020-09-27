@@ -29,6 +29,12 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+  {
+    output: {
+      chunkFilename: '[name].[contenthash:4].js',
+      filename: '[name].[contenthash:4].js',
+    },
+  },
   parts.minifyJavaScript(),
   parts.minifyCSS({
     options: {
@@ -40,7 +46,7 @@ const productionConfig = merge([
   parts.loadImages({
     options: {
       limit: 15000,
-      name: '[name].[ext]',
+      name: '[name].[contenthash:4].[ext]',
       loader: 'image-webpack-loader',
       mozjpeg: {
         progressive: true,
