@@ -3,6 +3,8 @@ const { mode } = require('webpack-nano/argv');
 const WebpackBar = require('webpackbar');
 const { merge } = require('webpack-merge');
 
+const path = require('path');
+
 const parts = require('./webpack.parts');
 
 const cssLoaders = [
@@ -34,6 +36,7 @@ const productionConfig = merge([
       chunkFilename: '[name].[contenthash:4].js',
       filename: '[name].[contenthash:4].js',
     },
+    recordsPath: path.join(__dirname, 'records.json'),
   },
   parts.minifyJavaScript(),
   parts.minifyCSS({
@@ -80,6 +83,9 @@ const productionConfig = merge([
     optimization: {
       splitChunks: {
         chunks: 'all',
+      },
+      runtimeChunk: {
+        name: 'runtime',
       },
     },
   },
