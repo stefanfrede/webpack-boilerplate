@@ -94,3 +94,19 @@ exports.tailwind = () => ({
     },
   },
 });
+
+exports.loadImages = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(gif|png|jpe?g|webp)$/i,
+        include,
+        exclude,
+        use: {
+          loader: 'url-loader',
+          options,
+        },
+      },
+    ],
+  },
+});

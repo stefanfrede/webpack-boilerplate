@@ -5,5 +5,8 @@
 @import 'tailwindcss/utilities';
 
 body {
-  background-color: deeppink;
+  background-color: bg-gray-100;
+  background-image: url('../images/leaves.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }

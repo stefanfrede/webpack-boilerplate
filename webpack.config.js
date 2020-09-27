@@ -21,6 +21,29 @@ const commonConfig = merge([
 const productionConfig = merge([
   parts.extractCSS({ loaders: cssLoaders }),
   parts.eliminateUnusedCSS(),
+  parts.loadImages({
+    options: {
+      limit: 15000,
+      name: '[name].[ext]',
+      loader: 'image-webpack-loader',
+      mozjpeg: {
+        progressive: true,
+      },
+      optipng: {
+        enabled: false,
+      },
+      pngquant: {
+        quality: [0.65, 0.9],
+        speed: 4,
+      },
+      gifsicle: {
+        interlaced: false,
+      },
+      webp: {
+        quality: 75,
+      },
+    },
+  }),
 ]);
 
 const developmentConfig = merge([
@@ -30,6 +53,7 @@ const developmentConfig = merge([
 
   parts.devServer(),
   parts.extractCSS({ options: { hmr: true }, loaders: cssLoaders }),
+  parts.loadImages(),
 ]);
 
 const getConfig = (mode) => {
