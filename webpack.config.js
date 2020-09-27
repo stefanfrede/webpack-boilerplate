@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack');
 const { mode } = require('webpack-nano/argv');
 const WebpackBar = require('webpackbar');
 const { merge } = require('webpack-merge');
@@ -12,7 +13,7 @@ const cssLoaders = [
 
 const commonConfig = merge([
   {
-    plugins: [new WebpackBar()],
+    plugins: [new Dotenv(), new WebpackBar()],
   },
 
   parts.clean(),

@@ -1,4 +1,4 @@
-export default (text = 'Hello world!') => {
+export default (text = process.env.HELLO) => {
   const element = document.createElement('div');
 
   element.className =
