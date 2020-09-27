@@ -3,6 +3,7 @@ const GitRevisionPlugin = require('git-revision-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { MiniHtmlWebpackPlugin } = require('mini-html-webpack-plugin');
 const PurgeCSSPlugin = require('purgecss-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 const { WebpackPluginServe } = require('webpack-plugin-serve');
 
@@ -152,6 +153,12 @@ exports.loadJavaScript = () => ({
         use: 'babel-loader',
       },
     ],
+  },
+});
+
+exports.minifyJavaScript = () => ({
+  optimization: {
+    minimizer: [new TerserPlugin({ sourceMap: true })],
   },
 });
 
