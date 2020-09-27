@@ -61,6 +61,7 @@ const productionConfig = merge([
       ],
     },
   }),
+  parts.generateSourceMaps({ type: 'source-map' }),
 ]);
 
 const developmentConfig = merge([
