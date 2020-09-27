@@ -44,6 +44,15 @@ const productionConfig = merge([
       },
     },
   }),
+  parts.loadSVGs({
+    options: {
+      plugins: [
+        { removeTitle: true },
+        { convertColors: { shorthex: false } },
+        { convertPathData: false },
+      ],
+    },
+  }),
 ]);
 
 const developmentConfig = merge([
@@ -54,6 +63,7 @@ const developmentConfig = merge([
   parts.devServer(),
   parts.extractCSS({ options: { hmr: true }, loaders: cssLoaders }),
   parts.loadImages(),
+  parts.loadSVGs(),
 ]);
 
 const getConfig = (mode) => {

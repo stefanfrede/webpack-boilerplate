@@ -110,3 +110,24 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
     ],
   },
 });
+
+exports.loadSVGs = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.svg$/i,
+        include,
+        exclude,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+          {
+            loader: 'svgo-loader',
+            options,
+          },
+        ],
+      },
+    ],
+  },
+});
