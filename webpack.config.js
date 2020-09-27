@@ -28,6 +28,7 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+  parts.attachRevision(),
   parts.extractCSS({ loaders: cssLoaders }),
   parts.eliminateUnusedCSS(),
   parts.loadImages({

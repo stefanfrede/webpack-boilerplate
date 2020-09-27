@@ -1,7 +1,9 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const PurgeCSSPlugin = require('purgecss-webpack-plugin');
+const GitRevisionPlugin = require('git-revision-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { MiniHtmlWebpackPlugin } = require('mini-html-webpack-plugin');
+const PurgeCSSPlugin = require('purgecss-webpack-plugin');
+const webpack = require('webpack');
 const { WebpackPluginServe } = require('webpack-plugin-serve');
 
 const path = require('path');
@@ -12,6 +14,14 @@ const APP_SOURCE = path.join(__dirname, 'src');
 
 exports.clean = () => ({
   plugins: [new CleanWebpackPlugin()],
+});
+
+exports.attachRevision = () => ({
+  plugins: [
+    new webpack.BannerPlugin({
+      banner: new GitRevisionPlugin().version(),
+    }),
+  ],
 });
 
 exports.devServer = () => ({
