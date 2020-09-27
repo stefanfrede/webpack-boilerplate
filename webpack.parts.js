@@ -1,3 +1,4 @@
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { MiniHtmlWebpackPlugin } = require('mini-html-webpack-plugin');
@@ -8,6 +9,10 @@ const glob = require('glob');
 
 const ALL_FILES = glob.sync(path.join(__dirname, 'src/*.js'));
 const APP_SOURCE = path.join(__dirname, 'src');
+
+exports.clean = () => ({
+  plugins: [new CleanWebpackPlugin()],
+});
 
 exports.devServer = () => ({
   watch: true,

@@ -15,6 +15,7 @@ const commonConfig = merge([
     plugins: [new WebpackBar()],
   },
 
+  parts.clean(),
   parts.page({ title: 'Webpack demo' }),
   parts.loadFonts({
     options: {
