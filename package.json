@@ -46,9 +46,13 @@
     "build": "wp --mode production"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "browserslist": "^4.14.5",
     "css-loader": "^4.3.0",
     "eslint": "^7.10.0",
@@ -83,5 +87,9 @@
     "webpack-plugin-serve": "^1.0.1",
     "webpackbar": "^4.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "core-js": "^3.6.5",
+    "core-js-pure": "^3.6.5"
+  }
 }

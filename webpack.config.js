@@ -23,6 +23,7 @@ const commonConfig = merge([
       name: '[name].[ext]',
     },
   }),
+  parts.loadJavaScript(),
 ]);
 
 const productionConfig = merge([
