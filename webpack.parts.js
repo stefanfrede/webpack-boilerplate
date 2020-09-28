@@ -2,7 +2,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const cssnano = require('cssnano');
 const GitRevisionPlugin = require('git-revision-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { MiniHtmlWebpackPlugin } = require('mini-html-webpack-plugin');
+const {
+  MiniHtmlWebpackPlugin,
+  generateAttributes,
+  generateCSSReferences,
+  generateJSReferences,
+} = require('mini-html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -39,11 +44,53 @@ exports.devServer = () => ({
   ],
 });
 
-exports.page = ({ title }) => ({
+exports.page = ({ context }) => ({
   plugins: [
     new MiniHtmlWebpackPlugin({
-      context: {
-        title,
+      context,
+      template: ({
+        css = [],
+        js = [],
+        publicPath = '',
+        title = '',
+        htmlAttributes = {
+          lang: 'en',
+        },
+        bodyAttributes = {},
+        head = '',
+        body = '',
+        cssAttributes = {},
+        jsAttributes = {},
+      }) => {
+        const htmlAttrs = generateAttributes(htmlAttributes);
+
+        const bodyAttrs = generateAttributes(bodyAttributes);
+
+        const cssTags = generateCSSReferences({
+          files: css,
+          attributes: cssAttributes,
+          publicPath,
+        });
+
+        const jsTags = generateJSReferences({
+          files: js,
+          attributes: jsAttributes,
+          publicPath,
+        });
+
+        return `<!DOCTYPE html>
+        <html${htmlAttrs}>
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+            <title>${title}</title>
+            ${head}${cssTags}
+          </head>
+          <body${bodyAttrs}>
+            ${body}${jsTags}
+          </body>
+        </html>`;
       },
     }),
   ],

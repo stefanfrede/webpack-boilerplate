@@ -19,7 +19,18 @@ const commonConfig = merge([
   },
 
   parts.clean(),
-  parts.page({ title: 'Webpack demo' }),
+  parts.page({
+    context: {
+      title: 'Webpack 4 boilerplate',
+      htmlAttributes: {
+        class: 'text-gray-900 antialiased leading-tight',
+        lang: 'en',
+      },
+      bodyAttributes: {
+        class: 'min-h-screen bg-gray-100',
+      },
+    },
+  }),
   parts.loadFonts({
     options: {
       limit: 50000,
