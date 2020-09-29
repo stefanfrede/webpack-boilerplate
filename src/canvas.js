@@ -1,10 +1,9 @@
+import { html } from 'lit-html';
+
 import confetti from 'canvas-confetti';
 
-export default () => {
-  const canvas = document.createElement('canvas');
-
-  canvas.className =
-    'block rounded bg-gray-100 border-2 border-gray-900 h-64 w-64';
+function run() {
+  const canvas = document.getElementById('canvas');
 
   const myConfetti = confetti.create(canvas, {
     resize: true,
@@ -15,6 +14,21 @@ export default () => {
     particleCount: 100,
     spread: 160,
   });
+}
 
-  return canvas;
-};
+if (document.readyState !== 'loading') {
+  run();
+} else {
+  document.addEventListener('DOMContentLoaded', run);
+}
+
+const component = () =>
+  html`
+    <div
+      class="flex border border-gray-200 bg-white rounded shadow overflow-hidden"
+    >
+      <canvas id="canvas" class="flex-auto"></canvas>
+    </div>
+  `;
+
+export default component;

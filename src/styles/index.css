@@ -20,9 +20,10 @@
   src: url('../fonts/Inter-italic.var.woff2?v=3.15') format('woff2');
 }
 
-body {
-  background-image: url('../images/leaves.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Inter var', sans-serif;
+@media (min-width: 1024px) {
+  body {
+    background-image: url('../images/leaves.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }

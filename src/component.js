@@ -1,18 +1,23 @@
-export default (text = process.env.HELLO) => {
-  const element = document.createElement('div');
+import { html } from 'lit-html';
 
-  element.className =
-    'rounded bg-gray-100 border-2 border-gray-900 max-w-md m-4 p-4';
-  element.textContent = text;
+import canvas from './canvas';
 
-  element.onclick = () =>
-    import('./lazy')
-      .then((lazy) => {
-        element.textContent = lazy.default;
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+const component = ({ headline = '📦 Webpack 4 Boilerplate' } = {}) =>
+  html`
+    <article class="mb-8">
+      <h1
+        class="mt-2 mb-8 text-2xl leading-8 font-extrabold tracking-tight sm:text-4xl sm:leading-10"
+      >
+        ${headline}
+      </h1>
 
-  return element;
-};
+      <p class="text-xl text-gray-700 leading-8 mb-8">
+        This is a minimal Webpack 4 boilerplate with development and production
+        optimization.
+      </p>
+
+      ${canvas()}
+    </article>
+  `;
+
+export default component;
