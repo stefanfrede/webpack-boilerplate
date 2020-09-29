@@ -1,0 +1,29 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter var';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('../fonts/Inter-roman.var.woff2?v=3.15') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter var';
+  font-style: italic;
+  font-weight: 100 900;
+  src: url('../fonts/Inter-italic.var.woff2?v=3.15') format('woff2');
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: url('../images/leaves.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

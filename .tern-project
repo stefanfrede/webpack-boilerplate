@@ -1,10 +1,10 @@
 {
-  "ecmaVersion": 10,
+  "ecmaVersion": 11,
   "libs": [
     "browser"
   ],
   "loadEagerly": [
-    "packages/**/*.js"
+    "src/**/*.js"
   ],
   "dontLoad": [
     "node_modules/**"

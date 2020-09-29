@@ -1,114 +1,136 @@
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const glob = require('glob');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+const { mode } = require('webpack-nano/argv');
+const WebpackBar = require('webpackbar');
+const { merge } = require('webpack-merge');
 
-const merge = require('webpack-merge');
 const path = require('path');
 
 const parts = require('./webpack.parts');
 
-const PATHS = {
-  app: path.join(__dirname, 'src'),
-};
+const cssLoaders = [
+  parts.postcssPresetEnv(),
+  parts.tailwind(),
+  parts.postcssImport(),
+];
 
 const commonConfig = merge([
   {
-    output: {
-      path: path.resolve(process.cwd(), 'dist'),
-    },
-    node: false,
-    plugins: [
-      new CaseSensitivePathsPlugin(),
-      new FriendlyErrorsWebpackPlugin(),
-      new HtmlWebpackPlugin({
-        template: './src/index.html',
-        title: 'Webpack Boilerplate',
-      }),
-    ],
-    resolve: {
-      mainFields: ['module', 'browser', 'main'],
-    },
+    plugins: [new Dotenv(), new WebpackBar()],
   },
-  parts.loadFonts(),
-  parts.loadSVGs({
+
+  parts.clean(),
+  parts.page({
+    context: {
+      title: 'Webpack 4 boilerplate',
+      htmlAttributes: {
+        class: 'text-gray-900 antialiased leading-tight',
+        lang: 'en',
+      },
+      bodyAttributes: {
+        class: 'min-h-screen bg-gray-100',
+      },
+    },
+  }),
+  parts.loadFonts({
     options: {
-      classPrefix: true,
-      idPrefix: true,
+      limit: 50000,
+      mimetype: 'application/font-woff',
+      name: '[name].[ext]',
     },
   }),
-  parts.loadJavaScript({
-    include: PATHS.app,
-  }),
-  {
-    optimization: {
-      noEmitOnErrors: true,
-    },
-  },
+  parts.loadJavaScript(),
 ]);
 
 const productionConfig = merge([
   {
-    performance: {
-      hints: 'warning',
-      maxEntrypointSize: 150000,
-      maxAssetSize: 450000,
-    },
-  },
-  {
-    recordsPath: path.join(__dirname, 'records.json'),
     output: {
-      chunkFilename: '[name].[chunkhash:4].js',
-      filename: '[name].[chunkhash:4].js',
+      chunkFilename: '[name].[contenthash:4].js',
+      filename: '[name].[contenthash:4].js',
     },
+    recordsPath: path.join(__dirname, 'records.json'),
   },
-  parts.clean(),
   parts.minifyJavaScript(),
   parts.minifyCSS({
     options: {
-      discardComments: {
-        removeAll: true,
-      },
-      safe: true,
+      preset: ['default'],
     },
   }),
-  parts.extractCSS({
-    use: ['css-loader', 'postcss-loader'],
-  }),
-  parts.purifyCSS({
-    paths: glob.sync(`${PATHS.app}/**/*.js`, { nodir: true }),
-  }),
+  parts.extractCSS({ loaders: cssLoaders }),
+  parts.eliminateUnusedCSS(),
   parts.loadImages({
     options: {
       limit: 15000,
-      name: '[name].[hash:4].[ext]',
+      name: '[name].[contenthash:4].[ext]',
+      loader: 'image-webpack-loader',
+      mozjpeg: {
+        progressive: true,
+      },
+      optipng: {
+        enabled: false,
+      },
+      pngquant: {
+        quality: [0.65, 0.9],
+        speed: 4,
+      },
+      gifsicle: {
+        interlaced: false,
+      },
+      webp: {
+        quality: 75,
+      },
+    },
+  }),
+  parts.loadSVGs({
+    options: {
+      plugins: [
+        { removeTitle: true },
+        { convertColors: { shorthex: false } },
+        { convertPathData: false },
+      ],
     },
   }),
   parts.generateSourceMaps({ type: 'source-map' }),
   {
     optimization: {
       splitChunks: {
-        chunks: 'initial',
+        chunks: 'all',
       },
       runtimeChunk: {
-        name: 'manifest',
+        name: 'runtime',
       },
+    },
+    performance: {
+      hints: 'warning', // "error" or false are valid too
+      maxEntrypointSize: 50000, // in bytes, default 250k
+      maxAssetSize: 100000, // in bytes
     },
   },
   parts.attachRevision(),
 ]);
 
 const developmentConfig = merge([
-  parts.devServer({
-    host: process.env.HOST,
-    port: process.env.PORT,
-  }),
-  parts.loadCSS(),
+  {
+    entry: ['./src', 'webpack-plugin-serve/client'],
+  },
+
+  parts.devServer(),
+  parts.extractCSS({ options: { hmr: true }, loaders: cssLoaders }),
   parts.loadImages(),
+  parts.loadSVGs(),
 ]);
 
-module.exports = (mode) => {
-  const config = mode === 'production' ? productionConfig : developmentConfig;
+const getConfig = (mode) => {
+  // Set global NODE_ENV
+  process.env.NODE_ENV = mode;
 
-  return merge([commonConfig, config, { mode }]);
+  switch (mode) {
+    case 'production':
+      return merge(commonConfig, productionConfig, { mode });
+    case 'development':
+      return merge(commonConfig, developmentConfig, { mode });
+    default:
+      throw new Error(`Trying to use an unknown mode, ${mode}`);
+  }
 };
+
+module.exports = getConfig(mode);

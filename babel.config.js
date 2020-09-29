@@ -1,18 +1,14 @@
-module.exports = api => {
-  const isTest = api.env('test');
+const presets = [
+  [
+    '@babel/preset-env',
+    {
+      corejs: 3.6,
+      modules: false,
+      useBuiltIns: 'usage',
+    },
+  ],
+];
 
-  return {
-    plugins: [
-      '@babel/plugin-syntax-dynamic-import',
-      '@babel/plugin-proposal-class-properties',
-      [
-        '@babel/plugin-transform-runtime',
-        {
-          corejs: 3,
-        },
-      ],
-      isTest ? 'babel-plugin-dynamic-import-node' : null,
-    ].filter(Boolean),
-    presets: [['@babel/preset-env', { modules: isTest ? 'commonjs' : false }]],
-  };
-};
+const plugins = [['@babel/plugin-transform-runtime']];
+
+module.exports = { presets, plugins };

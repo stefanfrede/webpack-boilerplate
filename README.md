@@ -5,11 +5,10 @@
 
 Webpack 4 boilerplate with:
 
-+ lit-html for templating
-+ ESlint and stylelint for linting
-+ Prettier for code formatting
-+ Jest and Cypress for testing
-+ and tailwindcss for styling.
+- lit-html for templating
+- ESlint and stylelint for linting
+- Prettier for code formatting
+- and Tailwind CSS for styling.
 
 ## Install Dependencies
 
@@ -31,34 +30,16 @@ npm start
 $ npm run lint
 ```
 
-## Run unit tests
-
-```sh
-$ npm test
-```
-
-## Run e2e tests
-
-```sh
-$ npm run test:e2e
-```
-
 ### Run production build
 
 ```bash
 npm run build
 ```
 
-### Get build stats
-
-```bash
-npm run build:stats
-```
-
 ### Run server on build output
 
 ```bash
-npm run start:build
+npm run serve
 ```
 
 ## Features
@@ -69,9 +50,7 @@ npm run start:build
 - [lit-html](https://lit-html.polymer-project.org)
 - [ESLint](https://eslint.org/)
 - [stylelint](https://stylelint.io)
-- [tailwindcss](https://tailwindcss.com)
-- [Jest](https://jestjs.io)
-- [Cypress](https://www.cypress.io)
+- [Tailwind CSS](https://tailwindcss.com)
 
 ## Author
 
