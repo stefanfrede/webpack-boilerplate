@@ -43,6 +43,7 @@
     "test": "echo \"This template does not include a test runner by default.\" && exit 1",
     "start": "nodemon --watch webpack.* --exec \"wp --mode development\"",
     "build": "wp --mode production",
+    "build:stats": "wp --mode production --json > stats.json",
     "lint": "run-s lint:eslint lint:prettier lint:stylelint",
     "lint:eslint": "eslint --ext .js --ext .html src/",
     "lint:prettier": "prettier --list-different \"src/**/*.js\"",

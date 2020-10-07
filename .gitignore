@@ -3,3 +3,4 @@ dist/
 .env
 records.json
 .tool-versions
+stats.json
