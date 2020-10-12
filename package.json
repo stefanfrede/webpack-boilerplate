@@ -1,7 +1,7 @@
 {
   "name": "webpack-boilerplate",
   "version": "2.0.0",
-  "description": "Webpack 4 Boilerplate",
+  "description": "Webpack 5 Boilerplate",
   "engines": {
     "node": "12.x.x",
     "npm": "6.x.x"
@@ -96,7 +96,7 @@
     "tailwindcss": "^1.8.13",
     "terser-webpack-plugin": "^4.2.3",
     "url-loader": "^4.1.1",
-    "webpack": "^4.44.2",
+    "webpack": "^5.0.0",
     "webpack-merge": "^5.2.0",
     "webpack-nano": "^1.1.0",
     "webpack-plugin-serve": "^1.1.0",
