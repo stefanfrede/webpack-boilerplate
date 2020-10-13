@@ -1,9 +1,9 @@
-# 📦 Webpack 4 Boilerplate
+# 📦 Webpack 5 Boilerplate
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![](https://github.com/stefanfrede/webpack-boilerplate/workflows/Node%20CI/badge.svg)
 
-Webpack 4 boilerplate with:
+Webpack 5 boilerplate with:
 
 - lit-html for templating
 - ESlint and stylelint for linting

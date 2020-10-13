@@ -15,13 +15,16 @@ const cssLoaders = [
 
 const commonConfig = merge([
   {
+    output: {
+      publicPath: '/',
+    },
     plugins: [new Dotenv(), new WebpackBar()],
   },
 
   parts.clean(),
   parts.page({
     context: {
-      title: 'Webpack 4 boilerplate',
+      title: 'Webpack 5 boilerplate',
       htmlAttributes: {
         class: 'text-gray-900 antialiased leading-tight',
         lang: 'en',

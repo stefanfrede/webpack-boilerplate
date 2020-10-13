@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 
 import canvas from './canvas';
 
-const component = ({ headline = '📦 Webpack 4 Boilerplate' } = {}) =>
+const component = ({ headline = '📦 Webpack 5 Boilerplate' } = {}) =>
   html`
     <article class="mb-8">
       <h1
@@ -12,7 +12,7 @@ const component = ({ headline = '📦 Webpack 4 Boilerplate' } = {}) =>
       </h1>
 
       <p class="text-xl text-gray-700 leading-8 mb-8">
-        This is a minimal Webpack 4 boilerplate with development and production
+        This is a minimal Webpack 5 boilerplate with development and production
         optimization.
       </p>
 
