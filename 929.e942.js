@@ -1,0 +1,3 @@
+/*! For license information please see 929.e942.js.LICENSE.txt */
+(self.webpackChunkwebpack_boilerplate=self.webpackChunkwebpack_boilerplate||[]).push([[929],{8929:function(e,n,t){"use strict";t.r(n);var i=t(8655),s=t.n(i),u=t(4016);function a(){var e=s()(['\n    <p class="mt-3 text-lg leading-7">\n      Eligendi ipsam enim harum ipsa est sunt consequuntur impedit. Nemo sunt\n      sequi et. Necessitatibus saepe architecto sint sed eligendi. Explicabo id\n      dolor est dolor sed ut ipsa.\n    </p>\n  ']);return a=function(){return e},e}n.default=function(){return(0,u.dy)(a())}}}]);
+//# sourceMappingURL=929.e942.js.map
